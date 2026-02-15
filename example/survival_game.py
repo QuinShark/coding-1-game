@@ -22,7 +22,17 @@ game_data = {
     'obstacle': "\U0001FAA8 ",# 🪨
     'leaf': "\U0001F343",# 🍃
     'empty': "  ",
+
+    'play_again': True,
 }
+
+def display_welcome_screen():
+    print(" ")
+    print("Welcome to Turtle Survival!")
+    print(" ")
+    print("Use WSAD for movement")
+    print("Avoid the hawk")
+    print("Don't Starve!")
 
 def draw_board(stdscr):
     stdscr.clear()
@@ -212,4 +222,6 @@ def play_game(stdscr):
     stdscr.refresh()
     time.sleep(3)
 
+display_welcome_screen()
+time.sleep(5.0)
 curses.wrapper(play_game)
