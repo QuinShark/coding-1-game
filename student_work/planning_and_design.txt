@@ -6,12 +6,13 @@ Part I: Planning & Design (15 pts)
 * Sketch a simple plan showing how the game will work step-by-step
 
 Game Idea:
-Pong
+*Pong clone
 
 Game Rules:
-
+* 
 
 Major Game Elements:
-
+* Pong rackets, ball, score, and the border
 
 Gameplay Process:
+*
