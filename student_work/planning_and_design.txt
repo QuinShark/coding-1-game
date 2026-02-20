@@ -15,4 +15,4 @@ Major Game Elements:
 * Pong rackets, ball, score, and the border
 
 Gameplay Process:
-*
+* When player uses W and S. It moves their bar up and down to hit the ball to their opponent. 
