@@ -18,3 +18,10 @@ Gameplay Process:
 * When player uses W and S. It moves their bar up and down to hit the ball to their opponent. Additionally we need a pong bot that can do the same actions as the player.
 I.E moving it up and down. The ball needs to be able to bounce off of the bars and have code to add to the points when it crosses the other team's side and is hit.
 Make it bigger. Maybe 21 by 14 with a 1 by 3 paddle and a 1 by 1 ball
+1. make outline of grid
+2. make split
+3. Creat paddle spirtws to test location then ball/cube
+4. Code in user movement then enemy
+5. create collisions and adds a point to score. 
+6. Create scoring system. Dictionary. 
+7. When certain point is reached end game/or have a button to end game. 
