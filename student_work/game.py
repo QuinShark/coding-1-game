@@ -9,3 +9,5 @@ def draw_board(screen):
 
 
 # Good Luck!
+
+print("hi ig")
