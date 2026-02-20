@@ -12,7 +12,8 @@ Game Rules:
 * Use the up and down arrow keys, W and S.
 
 Major Game Elements:
-* Pong bars, ball, score, and the border
+* Pong bars, ball, score, and the border. The bot.
 
 Gameplay Process:
-* When player uses W and S. It moves their bar up and down to hit the ball to their opponent. 
+* When player uses W and S. It moves their bar up and down to hit the ball to their opponent. Additionally we need a pong bot that can do the same actions as the player.
+I.E moving it up and down. The ball needs to be able to bounce off of the bars and have code to add to the points when it crosses the other team's side and is hit.
