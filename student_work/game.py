@@ -9,10 +9,10 @@ board = {
     'split': 11,
       
         # ASCII icons
-    'bot': "\U00002B1C",
-    'player': "\U00002B1C",
-    'object': "\U00002B1C",
-    'split': "\U00002B1C",
+    'colorbot': "\U00002B1C",
+    'colorplayer': "\U00002B1C",
+    'colorobject': "\U00002B1C",
+    'colorsplit': "\U00002B1C",
     'empty': "  "
 }
 def draw_board(stdscr):
@@ -25,7 +25,7 @@ def draw_board(stdscr):
         for x in range(board['width']):
                 # Player
             if x == board['player']['x'] and y == board['player']['y']:
-                row += board['object']
+                row += board['colorobject']
                 # Eagle
                 # elif x == game_data['eagle_pos']['x'] and y == game_data['eagle_pos']['y']:
                 #     row += game_data['eagle_icon']
