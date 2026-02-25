@@ -25,7 +25,7 @@ def draw_board(stdscr):
         for x in range(board['width']):
                 # Player
             if x == board['player']['x'] and y == board['player']['y']:
-                row += board['colorobject']
+                row += board['colorplayer']
                 # Eagle
                 # elif x == game_data['eagle_pos']['x'] and y == game_data['eagle_pos']['y']:
                 #     row += game_data['eagle_icon']
