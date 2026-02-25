@@ -3,9 +3,9 @@ import curses
 board = {
     'width': 21,
     'height': 14, 
-    'bot': [{'x': 1, 'y': 3}],
-    'player': [{'x': 1, 'y': 3}],
-    'object': [{'x': 1, 'y': 1.}],
+    'bot': {'x': 1, 'y': 3},
+    'player': {'x': 1, 'y': 3},
+    'object': {'x': 1, 'y': 1},
     'split': 11,
       
         # ASCII icons
