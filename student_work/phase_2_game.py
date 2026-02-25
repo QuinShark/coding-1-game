@@ -4,6 +4,6 @@ board = {
     'width': 21,
     'height': 14, 
     'paddles': 3,
-    'ball': 1,
-    
+    'object': [['x': 1, ]],
+    \U00002B1C
 }
