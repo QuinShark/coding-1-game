@@ -3,9 +3,9 @@ import curses
 board = {
     'width': 20,
     'height': 13, 
-    'bot': {'x': 0, 'y': 9},
+    'bot': {'x': 0, 'y': 1},
     'player': {'x': 0, 'y': 0},
-    'object': {'x': 2, 'y': 0},
+    'object': {'x': 0, 'y': range(1,1)},
     # 'split': {'x': 0, 'y': range(2,5)},
     
     'colorbot': "\U00002B1C",
@@ -24,8 +24,8 @@ def draw_board(stdscr):
         row = ""
         for x in range(board['width']):
                 # Player
-            if x == board['player']['x'] and y == board['player']['y']:
-                row += board['colorplayer']
+            if x == board['object']['x'] and y == board['object']['y']:
+                row += board['colorobject']
                 # Eagle
             elif x == board['player']['x'] and y == board['player']['y']:
                 row += board['colorplayer']
