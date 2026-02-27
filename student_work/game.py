@@ -24,11 +24,11 @@ def draw_board(stdscr):
         row = ""
         for x in range(board['width']):
                 # Player
-            if x == board['player']['x'] and y == board['player']['y']:
-                row += board['colorplayer']
+            if x == board['object']['x'] and y == board['object']['y']:
+                row += board['colorobject']
                 # Eagle
-                # elif x == game_data['eagle_pos']['x'] and y == game_data['eagle_pos']['y']:
-                #     row += game_data['eagle_icon']
+            elif x == board['player']['x'] and y == board['player']['y']:
+                row += board['colorplayer']
                 # Obstacles
                 # elif any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
                 #     row += game_data['obstacle']
