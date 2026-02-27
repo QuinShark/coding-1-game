@@ -1,15 +1,6 @@
 import curses
 
 board = {
-<<<<<<< HEAD
-    'width': 21,
-    'height': 14, 
-    'bot': {'x': 1, 'y': 3},
-    'player': {'x': 1, 'y': 3},
-    'object': {'x': 1, 'y': 1},
-    'split': 11,
-      
-=======
     'width': 20,
     'height': 13, 
     'bot': {'x': 10, 'y': 9},
@@ -18,7 +9,6 @@ board = {
     'split_1': {'x': 0, 'y': range(0,13)},
     'split': {'x': 10, 'y': 2},
     'split': {'x': 10, 'y': 3},  
->>>>>>> 993845b (range addded)
         # ASCII icons
     'colorbot': "\U00002B1C",
     'colorplayer': "\U00002B1C",
@@ -56,10 +46,10 @@ def draw_board(stdscr):
 curses.wrapper(draw_board)
 
 def move_player():
-    x = game_data['player']['x']
-    y = game_data['player']['y']
+    x = board['player']['x']
+    y = board['player']['y']
     while True:
         if key == "w" and y > 0:
             new_y -= 1
-        elif key == "s" and y < game_data['height'] - 1:
+        elif key == "s" and y < board['height'] - 1:
             new_y += 1
