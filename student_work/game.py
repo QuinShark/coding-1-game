@@ -3,11 +3,12 @@ import curses
 board = {
     'width': 20,
     'height': 13, 
-    'bot': {'x': 20, 'y': 13},
+    'bot': {'x': 10, 'y': 9},
     'player': {'x': 0, 'y': 0},
-    'object': {'x': 11, 'y': 0},
-    # 'split': {'x': 7, 'y': 5},
-      
+    'object': {'x': 10, 'y': 10},
+    'split': {'x': 10, 'y': range(2, 5)},
+    # 'split': {'x': 10, 'y': 2},
+    # 'split': {'x': 10, 'y': 3},  
         # ASCII icons
     'colorbot': "\U00002B1C",
     'colorplayer': "\U00002B1C",
@@ -33,8 +34,8 @@ def draw_board(stdscr):
             elif x == board['bot']['x'] and y == board['bot']['y']:
                 row += board['colorbot']
                 # # Collectibles
-                # elif any(c['x'] == x and c['y'] == y and not c['collected'] for c in game_data['collectibles']):
-                #     row += game_data['leaf']
+            elif x == board['split']['x'] and y == board['split']['y']:
+                row += board['colorsplit']
             else:
                 row += board['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1))
