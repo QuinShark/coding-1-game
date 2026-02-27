@@ -1,6 +1,7 @@
 import curses
 
 board = {
+<<<<<<< HEAD
     'width': 21,
     'height': 14, 
     'bot': {'x': 1, 'y': 3},
@@ -8,6 +9,16 @@ board = {
     'object': {'x': 1, 'y': 1},
     'split': 11,
       
+=======
+    'width': 20,
+    'height': 13, 
+    'bot': {'x': 10, 'y': 9},
+    'player': {'x': 0, 'y': 0},
+    'object': {'x': 10, 'y': 10},
+    'split_1': {'x': 0, 'y': range(0,13)},
+    'split': {'x': 10, 'y': 2},
+    'split': {'x': 10, 'y': 3},  
+>>>>>>> 993845b (range addded)
         # ASCII icons
     'colorbot': "\U00002B1C",
     'colorplayer': "\U00002B1C",
