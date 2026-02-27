@@ -1,12 +1,12 @@
 import curses
 
 board = {
-    'width': 21,
-    'height': 14, 
-    'bot': {'x': 1, 'y': 3},
-    'player': {'x': 1, 'y': 3},
-    'object': {'x': 1, 'y': 1},
-    'split': 11,
+    'width': 20,
+    'height': 13, 
+    'bot': {'x': 20, 'y': 13},
+    'player': {'x': 0, 'y': 0},
+    'object': {'x': 11, 'y': 0},
+    # 'split': {'x': 7, 'y': 5},
       
         # ASCII icons
     'colorbot': "\U00002B1C",
@@ -30,8 +30,8 @@ def draw_board(stdscr):
             elif x == board['player']['x'] and y == board['player']['y']:
                 row += board['colorplayer']
                 # Obstacles
-                # elif any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
-                #     row += game_data['obstacle']
+            elif x == board['bot']['x'] and y == board['bot']['y']:
+                row += board['colorbot']
                 # # Collectibles
                 # elif any(c['x'] == x and c['y'] == y and not c['collected'] for c in game_data['collectibles']):
                 #     row += game_data['leaf']
