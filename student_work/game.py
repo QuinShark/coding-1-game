@@ -3,13 +3,13 @@ import curses
 board = {
     'width': 20,
     'height': 13, 
-    'bot': {'x': 0, 'y': 1},
-    'player': {'x': 0, 'y': 0},
+    'bot': {'x': 0, 'y': 0},
+    'player': {'x': 15, 'y': 0},
     'object': {'x': 0, 'y': range(1,1)},
     # 'split': {'x': 0, 'y': range(2,5)},
     
-    'colorbot': "\U00002B1C",
-    'colorplayer': "\U00002B1C",
+    'colorbot': "||",
+    'colorplayer': "||",
     'colorobject': "\U00002B1C",
     'colorsplit': "\U00002B1C",
     'empty': "  "
