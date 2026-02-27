@@ -41,16 +41,36 @@ def draw_board(stdscr):
                 row += board['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1))
 
+    stdscr.addstr(board['height'] + 1, 0,
+                  f"Player Score: {board['player']['score']} Bot Score: {board['bot']['score']}",
+                  curses.color_pair(1))
+    stdscr.addstr(board['height'] + 2, 0,
+                  "Move with W for UP and S for DOWN, Q to quit",
+                  curses.color_pair(1))
+    stdscr.refresh()
+
     stdscr.refresh()
     stdscr.getkey()  # pause so player can see board
 
 curses.wrapper(draw_board)
 
-def move_player():
-    x = game_data['player']['x']
-    y = game_data['player']['y']
+def main(stdscr):
+    curses.curs_set(0)
+    stdscr.nodelay(True)
+
+    draw_board(stdscr)
+
     while True:
-        if key == "w" and y > 0:
-            new_y -= 1
-        elif key == "s" and y < game_data['height'] - 1:
-            new_y += 1
+        try:
+            key = stdscr.getkey()
+        except:
+            key = None
+
+        if key:
+            if key.lower() == "q":
+                break
+
+            move_player(key)
+            draw_board(stdscr)
+
+curses.wrapper(main) 
