@@ -6,10 +6,8 @@ board = {
     'bot': {'x': 10, 'y': 9},
     'player': {'x': 0, 'y': 0},
     'object': {'x': 10, 'y': 10},
-    'split_1': {'x': 0, 'y': range(0,13)},
-    'split': {'x': 10, 'y': 2},
-    'split': {'x': 10, 'y': 3},  
-        # ASCII icons
+    'split': {'x': 0, 'y': range(2,5)},
+    
     'colorbot': "\U00002B1C",
     'colorplayer': "\U00002B1C",
     'colorobject': "\U00002B1C",
@@ -28,14 +26,14 @@ def draw_board(stdscr):
             if x == board['player']['x'] and y == board['player']['y']:
                 row += board['colorplayer']
                 # Eagle
-                # elif x == game_data['eagle_pos']['x'] and y == game_data['eagle_pos']['y']:
-                #     row += game_data['eagle_icon']
+            elif x == board['player']['x'] and y == board['player']['y']:
+                row += board['colorplayer']
                 # Obstacles
-                # elif any(o['x'] == x and o['y'] == y for o in game_data['obstacles']):
-                #     row += game_data['obstacle']
+            elif x == board['bot']['x'] and y == board['bot']['y']:
+                row += board['colorbot']
                 # # Collectibles
-                # elif any(c['x'] == x and c['y'] == y and not c['collected'] for c in game_data['collectibles']):
-                #     row += game_data['leaf']
+            elif x == board['split']['x'] and y == board['split']['y']:
+                row += board['colorsplit']
             else:
                 row += board['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1))
