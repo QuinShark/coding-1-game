@@ -14,7 +14,6 @@ board = {
     'colorsplit': "\U00002B1C",
     'empty': "  "
 }
-
 def draw_board(stdscr):
     curses.start_color()
     curses.use_default_colors()
@@ -51,21 +50,7 @@ def draw_board(stdscr):
 #    stdscr.refresh()
  #   stdscr.getkey()  # pause so player can see board
 
-def move_player():
-    x = board['player']['x']
-    y = board['player']['y']
-
-    new_x, new_y = x, y
-    key = key.lower()
-
-  #  while True:
-    if key == "w" and y > 0:
-            new_y -= 1
-    elif key == "s" and y < board['height'] - 1:
-            new_y += 1
-    board['player']['x'] = new_x
-    board['player']['y'] = new_y
-    board['player']['score'] += 1
+curses.wrapper(draw_board)
 
 def main(stdscr):
     curses.curs_set(0)
