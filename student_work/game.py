@@ -53,7 +53,9 @@ def draw_board(stdscr):
         pass
     stdscr.refresh()
 
-# Player moves based on keybinds established in main
+#    stdscr.refresh()
+ #   stdscr.getkey()  # pause so player can see board
+
 def move_player(key):
     x = board['player']['x']
     y = board['player']['y']
