@@ -72,6 +72,9 @@ def main(stdscr):
 
     draw_board(stdscr)
 
+def move_ball():
+    pass
+
     while True:
         try:
             key = stdscr.getkey()
@@ -81,6 +84,8 @@ def main(stdscr):
         if key:
             if key.lower() == "q":
                 break
+
+            move_ball()
 
             move_player(key)
             draw_board(stdscr)
