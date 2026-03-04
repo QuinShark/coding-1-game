@@ -1,6 +1,9 @@
+# imports
 import curses
 import random
 import time
+
+# player data
 board = {
     'width': 20,
     'height': 13, 
@@ -23,24 +26,26 @@ def draw_board(stdscr):
     stdscr.clear()
     for y in range(board['height']):
         row = ""
+        # all things on screen
         for x in range(board['width']):
-                # Player
+                # Object
             if x == board['object']['x'] and y == board['object']['y']:
                 row += board['colorobject']
-                # Eagle
+                # Player
             elif x == board['player']['x'] and y == board['player']['y']:
                 row += board['colorplayer']
-                # Obstacles
+                # Bot
             elif x == board['bot']['x'] and y == board['bot']['y']:
                 row += board['colorbot']
+                # Empty
             else:
                 row += board['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1))
-
+    # WORDS - Score Edition
     stdscr.addstr(board['height'] + 1, 0,
                   f"Player Score: {board['player']['score']} Bot Score: {board['bot']['score']}",
                   curses.color_pair(1))
-    try:
+    try:     # WORDS - Instruction Edition
         stdscr.addstr(board['height'] + 2, 0,
                   "Move with W for UP and S for DOWN, Q to quit",
                   curses.color_pair(1))
@@ -48,6 +53,7 @@ def draw_board(stdscr):
         pass
     stdscr.refresh()
 
+# Player moves based on keybinds established in main
 def move_player(key):
     x = board['player']['x']
     y = board['player']['y']
@@ -64,6 +70,7 @@ def move_player(key):
     board['player']['y'] = new_y
     board['player']['score'] += 1
 
+# Bot is currently random, plz sync up to player/ball movement
 def move_bot():
     directions = [(0, -1), (0, 1)]
     random.shuffle(directions)
@@ -80,7 +87,7 @@ def move_bot():
     board['bot']['y'] = new_y
     board['bot']['score'] += 1
 
-
+# runs like all the functions
 def main(stdscr):
     curses.curs_set(0)
     stdscr.nodelay(True)
