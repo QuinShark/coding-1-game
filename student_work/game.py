@@ -68,18 +68,21 @@ def move_player(key):
     board['player']['score'] += 1
 
 def move_bot():
-    directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+    directions = [(0, -1), (0, 1)]
     random.shuffle(directions)
-    ex, ey = board['bot']['x'], board['bot']['y']
+    #ex, ey = board['bot']['x'], board['bot']['y']
+    ey = board['bot']['y']
 
     for dx, dy in directions:
-        new_x = ex + dx
+        #new_x = ex + dx
         new_y = ey + dy
-        # if 0 <= new_x < board['width'] and 0 <= new_y < board['height']:
-        #     if not any(o['x'] == new_x and o['y'] == new_y for o in board['object']):
-        #         board['bot']['x'] = new_x
-        #         board['bot']['y'] = new_y
-        #         break
+        if 0 <= new_y < board['height']:
+                 board['bot']['y'] = new_y
+                 break
+    #board['bot']['x'] = new_x
+    board['bot']['y'] = new_y
+    board['bot']['score'] += 1
+
 
 def main(stdscr):
     curses.curs_set(0)
