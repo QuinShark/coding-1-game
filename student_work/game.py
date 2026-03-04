@@ -66,6 +66,7 @@ def move_player(key):
     board['player']['x'] = new_x
     board['player']['y'] = new_y
     board['player']['score'] += 1
+
 def move_bot():
     directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
     random.shuffle(directions)
@@ -74,11 +75,11 @@ def move_bot():
     for dx, dy in directions:
         new_x = ex + dx
         new_y = ey + dy
-        if 0 <= new_x < board['width'] and 0 <= new_y < board['height']:
-            if not any(o['x'] == new_x and o['y'] == new_y for o in board['object']):
-                board['bot']['x'] = new_x
-                board['bot']['y'] = new_y
-                break
+        # if 0 <= new_x < board['width'] and 0 <= new_y < board['height']:
+        #     if not any(o['x'] == new_x and o['y'] == new_y for o in board['object']):
+        #         board['bot']['x'] = new_x
+        #         board['bot']['y'] = new_y
+        #         break
 
 def main(stdscr):
     curses.curs_set(0)
@@ -97,9 +98,8 @@ def main(stdscr):
                 break
 
             move_player(key)
-            draw_board(stdscr)
             move_bot()
 
             draw_board(stdscr)
-            time.sleep(0.2)
+            #time.sleep(0.2)
 curses.wrapper(main) 
