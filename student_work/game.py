@@ -33,11 +33,6 @@ def draw_board(stdscr):
                 # Obstacles
             elif x == board['bot']['x'] and y == board['bot']['y']:
                 row += board['colorbot']
-                # # Collectibles
-            # elif x == board['split']['x'] and y == board['split']['y']:
-            #     row += board['colorsplit']
-                # elif any(c['x'] == x and c['y'] == y and not c['collected'] for c in game_data['collectibles']):
-                #     row += game_data['leaf']
             else:
                 row += board['empty']
         stdscr.addstr(y, 0, row, curses.color_pair(1))
@@ -45,22 +40,32 @@ def draw_board(stdscr):
     stdscr.addstr(board['height'] + 1, 0,
                   f"Player Score: {board['player']['score']} Bot Score: {board['bot']['score']}",
                   curses.color_pair(1))
-    stdscr.addstr(board['height'] + 2, 0,
+    try:
+        stdscr.addstr(board['height'] + 2, 0,
                   "Move with W for UP and S for DOWN, Q to quit",
                   curses.color_pair(1))
+    except curses.error:
+        pass
     stdscr.refresh()
 
-    stdscr.refresh()
-    stdscr.getkey()  # pause so player can see board
+#    stdscr.refresh()
+ #   stdscr.getkey()  # pause so player can see board
 
 def move_player():
-    x = game_data['player']['x']
-    y = game_data['player']['y']
-    while True:
-        if key == "w" and y > 0:
+    x = board['player']['x']
+    y = board['player']['y']
+
+    new_x, new_y = x, y
+    key = key.lower()
+
+  #  while True:
+    if key == "w" and y > 0:
             new_y -= 1
-        elif key == "s" and y < game_data['height'] - 1:
+    elif key == "s" and y < board['height'] - 1:
             new_y += 1
+    board['player']['x'] = new_x
+    board['player']['y'] = new_y
+    board['player']['score'] += 1
 
 def main(stdscr):
     curses.curs_set(0)
