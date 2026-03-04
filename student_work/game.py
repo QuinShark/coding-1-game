@@ -48,9 +48,6 @@ def draw_board(stdscr):
         pass
     stdscr.refresh()
 
-#    stdscr.refresh()
- #   stdscr.getkey()  # pause so player can see board
-
 def move_player(key):
     x = board['player']['x']
     y = board['player']['y']
