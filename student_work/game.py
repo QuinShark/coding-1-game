@@ -10,8 +10,8 @@ board = {
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
-    'object': {'x': 0, 'y': range(1,1)},
-    # 'split': {'x': 0, 'y': range(2,5)},
+    'object': {'x': 0, 'y': 8},
+    'split': {'x': 0, 'y': 9},
     
     'colorplayer_2': "||",
     'colorplayer_1': "||",
@@ -29,8 +29,10 @@ def draw_board(stdscr):
         row = ""
         # all things on screen
         for x in range(board['width']):
-                # Object
-            if x == board['object']['x'] and y == board['object']['y']:
+              
+            if x== board['split']['x'] and y == board['split']['y']:
+                row += board['colorsplit']
+            elif x == board['object']['x'] and y == board['object']['y']:
                 row += board['colorobject']
                 # Player
             elif x == board['player_1']['x'] and y == board['player_1']['y']:
