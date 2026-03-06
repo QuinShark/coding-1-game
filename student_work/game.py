@@ -115,7 +115,9 @@ def main(stdscr):
     while True:
         try:
             key = stdscr.getkey()
-            alt_key = stdscr.keypad(True)
+            #stdscr.keypad(True)
+            alt_key = stdscr.getch()
+            #stdscr.addstr(0, 0, '%s' % key == curses.KEY_UP)
         except:
             key = None
             alt_key = None
