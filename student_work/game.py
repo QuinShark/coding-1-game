@@ -1,7 +1,8 @@
 # imports
 import curses
-import random
-import time
+from curses import KEY_DOWN, KEY_UP
+# import random
+# import time
 
 # player data
 board = {
@@ -58,8 +59,8 @@ def draw_board(stdscr):
  #   stdscr.getkey()  # pause so player can see board
 
 def move_player(key):
-    x = board['player_2']['x']
-    y = board['player_2']['y']
+    x = board['player']['x']
+    y = board['player']['y']
 
     new_x, new_y = x, y
     key = key.lower()
@@ -91,8 +92,8 @@ def move_player(key):
 #     board['bot']['score'] += 1
 
 def move_player_2(alt_key):
-    x = board['player']['x']
-    y = board['player']['y']
+    x = board['player_2']['x']
+    y = board['player_2']['y']
 
     new_x, new_y = x, y
 
