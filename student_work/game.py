@@ -91,16 +91,16 @@ def move_player(key):
 #     board['bot']['y'] = new_y
 #     board['bot']['score'] += 1
 
-def move_player_2(alt_key):
+def move_player_2(key):
     x = board['player_2']['x']
     y = board['player_2']['y']
 
     new_x, new_y = x, y
 
   #  while True:
-    if alt_key == curses.KEY_UP and y > 0:
+    if key == "i" and y > 0:
             new_y -= 1
-    elif alt_key == curses.KEY_DOWN and y < board['height'] - 1:
+    elif key == "k" and y < board['height'] - 1:
             new_y += 1
     board['player_2']['x'] = new_x
     board['player_2']['y'] = new_y
@@ -117,18 +117,18 @@ def main(stdscr):
         try:
             key = stdscr.getkey()
             #stdscr.keypad(True)
-            alt_key = stdscr.getch()
+            #alt_key = stdscr.getch()
             #stdscr.addstr(0, 0, '%s' % key == curses.KEY_UP)
         except:
             key = None
-            alt_key = None
+            #alt_key = None
 
         if key:
             if key.lower() == "q":
                 break
 
             move_player(key)
-            move_player_2(alt_key)
+            move_player_2(key)
             #move_bot()
 
             draw_board(stdscr)
