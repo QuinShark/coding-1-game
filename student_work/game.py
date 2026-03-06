@@ -16,7 +16,7 @@ board = {
     'colorplayer_2': "||",
     'colorplayer_1': "||",
     'colorobject': ".",
-    'colorsplit': "\U00002B1C",
+    'colorsplit': ".",
     'empty': "  "
 }
 def draw_board(stdscr):
