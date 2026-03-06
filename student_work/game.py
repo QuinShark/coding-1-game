@@ -11,12 +11,29 @@ board = {
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
     'object': {'x': 0, 'y': 8},
-    'split': {'x': 10, 'y': 0},
+    'split1': {'x': 8, 'y': 0},
+    'split2': {'x': 9, 'y': 0},
+    'split3': {'x': 10, 'y': 0},
+    'split4': {'x': 11, 'y': 0},
+    'split5': {'x': 12, 'y': 0},
+    'split6': {'x': 13, 'y': 0},
+    'split7': {'x': 14, 'y': 0},
+    'split8': {'x': 15, 'y': 0},
+    'split9': {'x': 16, 'y': 0},
+
     
     'colorplayer_2': "||",
     'colorplayer_1': "||",
     'colorobject': ".",
     'colorsplit': ".",
+    'colorsplit1': ".",
+    'colorsplit2': ".",
+    'colorsplit3': ".",
+    'colorsplit4': ".",
+    'colorsplit5': ".",
+    'colorsplit6': ".",
+    'colorsplit7': ".",
+
     'empty': "  "
 }
 def draw_board(stdscr):
