@@ -11,7 +11,7 @@ board = {
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
     'object': {'x': 0, 'y': 8},
-    'split': {'x': 0, 'y': 9},
+    'split': {'x': 10, 'y': 0},
     
     'colorplayer_2': "||",
     'colorplayer_1': "||",
@@ -76,21 +76,21 @@ def move_player_1(key):
     board['player_1']['score'] += 1
 
 # Bot is currently random, plz sync up to player/ball movement
-# def move_bot():
-#     directions = [(0, -1), (0, 1)]
-#     random.shuffle(directions)
-#     #ex, ey = board['bot']['x'], board['bot']['y']
-#     ey = board['bot']['y']
+def move_object():
+    directions = [(0, -1), (0, 1)]
+    random.shuffle(directions)
+    #ex, ey = board['bot']['x'], board['bot']['y']
+    ey = board['object']['y']
 
-#     for dx, dy in directions:
-#         #new_x = ex + dx
-#         new_y = ey + dy
-#         if 0 <= new_y < board['height']:
-#                  board['bot']['y'] = new_y
-#                  break
-#     #board['bot']['x'] = new_x
-#     board['bot']['y'] = new_y
-#     board['bot']['score'] += 1
+    for dx, dy in directions:
+        #new_x = ex + dx
+        new_y = ey + dy
+        if 0 <= new_y < board['height']:
+                 board['object']['y'] = new_y
+                 break
+    #board['bot']['x'] = new_x
+    board['object']['y'] = new_y
+    board['object']['score'] += 1
 
 def move_player_2(key):
     x = board['player_2']['x']
