@@ -153,3 +153,5 @@ def main(stdscr):
             draw_board(stdscr)
             #time.sleep(0.2)
 curses.wrapper(main) 
+
+#there's totally a diffferent trst
