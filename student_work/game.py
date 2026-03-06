@@ -15,7 +15,7 @@ board = {
     
     'colorplayer_2': "||",
     'colorplayer_1': "||",
-    'colorobject': "\U00002B1C",
+    'colorobject': ".",
     'colorsplit': "\U00002B1C",
     'empty': "  "
 }
