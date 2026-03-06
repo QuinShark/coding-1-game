@@ -73,11 +73,11 @@ def move_player(key):
     board['player']['score'] += 1
 
 # Bot is currently random, plz sync up to player/ball movement
-def move_bot():
-    directions = [(0, -1), (0, 1)]
-    random.shuffle(directions)
-    #ex, ey = board['bot']['x'], board['bot']['y']
-    ey = board['bot']['y']
+# def move_bot():
+#     directions = [(0, -1), (0, 1)]
+#     random.shuffle(directions)
+#     #ex, ey = board['bot']['x'], board['bot']['y']
+#     ey = board['bot']['y']
 
 #     for dx, dy in directions:
 #         #new_x = ex + dx
@@ -126,8 +126,7 @@ def main(stdscr):
                 break
 
             move_player(key)
-            move_player_2(key)
-            #move_bot()
+            move_bot()
 
             draw_board(stdscr)
             #time.sleep(0.2)
