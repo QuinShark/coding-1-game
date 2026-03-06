@@ -79,7 +79,6 @@ def move_bot():
     #ex, ey = board['bot']['x'], board['bot']['y']
     ey = board['bot']['y']
 
-<<<<<<< HEAD
 #     for dx, dy in directions:
 #         #new_x = ex + dx
 #         new_y = ey + dy
@@ -104,17 +103,6 @@ def move_player_2(key):
     board['player_2']['x'] = new_x
     board['player_2']['y'] = new_y
     board['player_2']['score'] += 1
-=======
-    for dx, dy in directions:
-        #new_x = ex + dx
-        new_y = ey + dy
-        if 0 <= new_y < board['height']:
-                 board['bot']['y'] = new_y
-                 break
-    #board['bot']['x'] = new_x
-    board['bot']['y'] = new_y
-    board['bot']['score'] += 1
->>>>>>> bb48c07 (fd)
 
 # runs like all the functions
 def main(stdscr):
@@ -126,29 +114,20 @@ def main(stdscr):
     while True:
         try:
             key = stdscr.getkey()
-<<<<<<< HEAD
             #stdscr.keypad(True)
             #alt_key = stdscr.getch()
             #stdscr.addstr(0, 0, '%s' % key == curses.KEY_UP)
         except:
             key = None
             #alt_key = None
-=======
-        except:
-            key = None
->>>>>>> bb48c07 (fd)
 
         if key:
             if key.lower() == "q":
                 break
 
             move_player(key)
-<<<<<<< HEAD
             move_player_2(key)
             #move_bot()
-=======
-            move_bot()
->>>>>>> bb48c07 (fd)
 
             draw_board(stdscr)
             #time.sleep(0.2)
