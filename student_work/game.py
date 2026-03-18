@@ -9,13 +9,8 @@ board = {
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
-<<<<<<< HEAD
-    'player_2': {'x': 16, 'y': 0,  "score": 0},
-    'object': {'x': 0, 'y': 9},
-=======
     'player_2': {'x': 15, 'y': 0,  "score": 0},
     'object': {'x': 8, 'y': 6},
->>>>>>> c855aa4 (gave ball eagle movement as base)
     'split1': {'x': 8, 'y': 0},
     'split2': {'x': 8, 'y': 1},
     'split3': {'x': 8, 'y': 2},
