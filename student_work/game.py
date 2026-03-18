@@ -202,8 +202,17 @@ def move_ball():
     #     new_x, new_y = random.choice(valid_moves)
     #     board['object']["x"] = new_x
     #     board['object']["y"] = new_y
-    random.shuffle(board['ne'])
+    #random.shuffle(board['ne'])
     # if board['object']['x']['y']
+
+    ex = board['object']["x"]
+    ey = board['object']["y"]
+
+    #NE - North East
+    #board[object]['x']['y']
+    new_x = ex + 1
+    new_y = ey + 1
+    
 
 
 # runs like all the functions
