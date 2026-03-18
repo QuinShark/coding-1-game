@@ -8,7 +8,10 @@ board = {
     'width': 21,
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
-    
+    'ne': {'x':0, 'y':0}
+    'nw': {'x':0, 'y':0}
+    'se': {'x':0, 'y':0}
+    'nw': {'x':0, 'y':0}
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
     'object': {'x': 8, 'y': 6},
