@@ -10,17 +10,10 @@ board = {
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
-<<<<<<< HEAD
-    'object': {'x': 8, 'y': 8},
-    'split1': {'x': 8, 'y': 0},
-    'split2': {'x': 9, 'y': 0},
-    'split3': {'x': 10, 'y': 0},
-=======
     'object': {'x': 0, 'y': 8},
     'split1': {'x': 10, 'y': 1},
     'split2': {'x': 9, 'y': 2},
     'split3': {'x': 10, 'y': 3},
->>>>>>> 25509c3 (added split)
     'split4': {'x': 11, 'y': 0},
     'split5': {'x': 12, 'y': 0},
     'split6': {'x': 13, 'y': 0},
