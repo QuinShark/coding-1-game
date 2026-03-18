@@ -10,10 +10,17 @@ board = {
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
+<<<<<<< HEAD
     'object': {'x': 8, 'y': 8},
     'split1': {'x': 8, 'y': 0},
     'split2': {'x': 9, 'y': 0},
     'split3': {'x': 10, 'y': 0},
+=======
+    'object': {'x': 0, 'y': 8},
+    'split1': {'x': 10, 'y': 1},
+    'split2': {'x': 9, 'y': 2},
+    'split3': {'x': 10, 'y': 3},
+>>>>>>> 25509c3 (added split)
     'split4': {'x': 11, 'y': 0},
     'split5': {'x': 12, 'y': 0},
     'split6': {'x': 13, 'y': 0},
@@ -55,6 +62,21 @@ def draw_board(stdscr):
                 # Bot
             elif x == board['player_2']['x'] and y == board['player_2']['y']:
                 row += board['colorplayer_2']
+            elif: x == board['split1']['x'] and y == board['split1']['y']:
+                row += board['colorsplit1']
+            elif: x == board['split2']['x'] and y == board['split2']['y']:
+                row += board['colorsplit2']
+            elif: x == board['split3']['x'] and y == board['split3']['y']:
+                row += board['colorsplit3']
+            elif: x == board['split4']['x'] and y == board['split4']['y']:
+                row += board['colorsplit4']
+            elif: x == board['split5']['x'] and y == board['split5']['y']:
+                row += board['colorsplit5']
+            elif: x == board['split6']['x'] and y == board['split6']['y']:
+                row += board['colorsplit6']
+            elif: x == board['split7']['x'] and y == board['split7']['y']:
+                row += board['colorsplit7']
+
                 # Empty
             else:
                 row += board['empty']
