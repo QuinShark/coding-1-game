@@ -9,8 +9,13 @@ board = {
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
+<<<<<<< HEAD
     'player_2': {'x': 16, 'y': 0,  "score": 0},
     'object': {'x': 0, 'y': 9},
+=======
+    'player_2': {'x': 15, 'y': 0,  "score": 0},
+    'object': {'x': 8, 'y': 6},
+>>>>>>> c855aa4 (gave ball eagle movement as base)
     'split1': {'x': 8, 'y': 0},
     'split2': {'x': 8, 'y': 1},
     'split3': {'x': 8, 'y': 2},
@@ -161,6 +166,45 @@ def move_player_2(key):
     board['player_2']['y'] = new_y
     board['player_2']['score'] += 1
 
+def move_ball():
+    #stdscr.move(y,x)
+    directions = [
+        (0, -1),  # up
+        (0, 1),   # down
+        (-1, 0),  # left
+        (1, 0)    # right
+    ]
+
+    random.shuffle(directions)
+
+    ex = board['object']["x"]
+    ey = board['object']["y"]
+
+    valid_moves = []
+
+    for dx, dy in directions:
+        new_x = ex + dx
+        new_y = ey + dy
+
+        # Inside board?
+        if not (0 <= new_x < board['width'] and
+                0 <= new_y < board['height']):
+            continue
+
+        #Rock collision?
+               # if any(o["x"] == new_x and o["y"] == new_y
+                #    for o in game_data['obstacles']):
+                 #   continue
+
+        valid_moves.append((new_x, new_y))
+
+    # If there are valid moves, pick one
+    if valid_moves:
+        new_x, new_y = random.choice(valid_moves)
+        board['object']["x"] = new_x
+        board['object']["y"] = new_y
+
+
 # runs like all the functions
 def main(stdscr):
     curses.curs_set(0)
@@ -185,6 +229,7 @@ def main(stdscr):
             move_player_1(key)
             move_player_2(key)
             #move_bot()
+            move_ball()
 
             draw_board(stdscr)
             #time.sleep(0.2)
