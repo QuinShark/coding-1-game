@@ -166,42 +166,44 @@ def move_player_2(key):
     board['player_2']['score'] += 1
 
 def move_ball():
-    #stdscr.move(y,x)
-    directions = [
-        (0, -1),  # up
-        (0, 1),   # down
-        (-1, 0),  # left
-        (1, 0)    # right
-    ]
+    # #stdscr.move(y,x)
+    # directions = [
+    #     (0, -1),  # up
+    #     (0, 1),   # down
+    #     (-1, 0),  # left
+    #     (1, 0)    # right
+    # ]
 
-    random.shuffle(directions)
+    # random.shuffle(directions)
 
-    ex = board['object']["x"]
-    ey = board['object']["y"]
+    # ex = board['object']["x"]
+    # ey = board['object']["y"]
 
-    valid_moves = []
+    # valid_moves = []
 
-    for dx, dy in directions:
-        new_x = ex + dx
-        new_y = ey + dy
+    # for dx, dy in directions:
+    #     new_x = ex + dx
+    #     new_y = ey + dy
 
-        # Inside board?
-        if not (0 <= new_x < board['width'] and
-                0 <= new_y < board['height']):
-            continue
+    #     # Inside board?
+    #     if not (0 <= new_x < board['width'] and
+    #             0 <= new_y < board['height']):
+    #         continue
 
-        #Rock collision?
-               # if any(o["x"] == new_x and o["y"] == new_y
-                #    for o in game_data['obstacles']):
-                 #   continue
+    #     #Rock collision?
+    #            # if any(o["x"] == new_x and o["y"] == new_y
+    #             #    for o in game_data['obstacles']):
+    #              #   continue
 
-        valid_moves.append((new_x, new_y))
+    #     valid_moves.append((new_x, new_y))
 
     # If there are valid moves, pick one
-    if valid_moves:
-        new_x, new_y = random.choice(valid_moves)
-        board['object']["x"] = new_x
-        board['object']["y"] = new_y
+    # if valid_moves:
+    #     new_x, new_y = random.choice(valid_moves)
+    #     board['object']["x"] = new_x
+    #     board['object']["y"] = new_y
+
+    if board['object']
 
 
 # runs like all the functions
