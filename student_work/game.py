@@ -5,23 +5,27 @@ import time
 
 # player data
 board = {
-    'width': 20,
+    'width': 21,
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
-    'player_2': {'x': 15, 'y': 0,  "score": 0},
-    'object': {'x': 0, 'y': 8},
-    'split1': {'x': 10, 'y': 1},
-    'split2': {'x': 9, 'y': 2},
-    'split3': {'x': 10, 'y': 3},
-    'split4': {'x': 11, 'y': 0},
-    'split5': {'x': 12, 'y': 0},
-    'split6': {'x': 13, 'y': 0},
-    'split7': {'x': 14, 'y': 0},
-    'split8': {'x': 15, 'y': 0},
-    'split9': {'x': 16, 'y': 0},
+    'player_2': {'x': 16, 'y': 0,  "score": 0},
+    'object': {'x': 0, 'y': 9},
+    'split1': {'x': 8, 'y': 0},
+    'split2': {'x': 8, 'y': 1},
+    'split3': {'x': 8, 'y': 2},
+    'split4': {'x': 8, 'y': 3},
+    'split5': {'x': 8, 'y': 4},
+    'split6': {'x': 8, 'y': 5},
+    'split7': {'x': 8, 'y': 6},
+    'split8': {'x': 8, 'y': 7},
+    'split9': {'x': 8, 'y': 8},
+    'split10': {'x': 8, 'y': 9},
+    'split11': {'x': 8, 'y': 10},
+    'split12': {'x': 8, 'y': 11},
+    'split13': {'x': 8, 'y': 12},
+    'split14': {'x': 8, 'y': 14},
 
-    
     'colorplayer_2': "||",
     'colorplayer_1': "||",
     'colorobject': ".",
@@ -33,7 +37,14 @@ board = {
     'colorsplit5': ".",
     'colorsplit6': ".",
     'colorsplit7': ".",
-
+    'colorsplit8': ".",
+    'colorsplit9': ".",
+    'colorsplit10': ".",
+    'colorsplit11': ".",
+    'colorsplit12': ".",
+    'colorsplit13': ".",
+    'colorsplit14': ".",
+                        
     'empty': "  "
 }
 def draw_board(stdscr):
@@ -55,21 +66,34 @@ def draw_board(stdscr):
                 # Bot
             elif x == board['player_2']['x'] and y == board['player_2']['y']:
                 row += board['colorplayer_2']
-            elif: x == board['split1']['x'] and y == board['split1']['y']:
+            elif x == board['split1']['x'] and y == board['split1']['y']:
                 row += board['colorsplit1']
-            elif: x == board['split2']['x'] and y == board['split2']['y']:
+            elif x == board['split2']['x'] and y == board['split2']['y']:
                 row += board['colorsplit2']
-            elif: x == board['split3']['x'] and y == board['split3']['y']:
+            elif x == board['split3']['x'] and y == board['split3']['y']:
                 row += board['colorsplit3']
-            elif: x == board['split4']['x'] and y == board['split4']['y']:
+            elif x == board['split4']['x'] and y == board['split4']['y']:
                 row += board['colorsplit4']
-            elif: x == board['split5']['x'] and y == board['split5']['y']:
+            elif x == board['split5']['x'] and y == board['split5']['y']:
                 row += board['colorsplit5']
-            elif: x == board['split6']['x'] and y == board['split6']['y']:
+            elif x == board['split6']['x'] and y == board['split6']['y']:
                 row += board['colorsplit6']
-            elif: x == board['split7']['x'] and y == board['split7']['y']:
+            elif x == board['split7']['x'] and y == board['split7']['y']:
                 row += board['colorsplit7']
-
+            elif x == board['split8']['x'] and y == board['split8']['y']:
+                row += board['colorsplit8']
+            elif x == board['split9']['x'] and y == board['split9']['y']:
+                row += board['colorsplit9']
+            elif x == board['split10']['x'] and y == board['split10']['y']:
+                row += board['colorsplit10']
+            elif x == board['split11']['x'] and y == board['split11']['y']:
+                row += board['colorsplit11']
+            elif x == board['split12']['x'] and y == board['split12']['y']:
+                row += board['colorsplit12']
+            elif x == board['split13']['x'] and y == board['split13']['y']:
+                row += board['colorsplit13']
+            elif x == board['split14']['x'] and y == board['split14']['y']:
+                row += board['colorsplit14']
                 # Empty
             else:
                 row += board['empty']
