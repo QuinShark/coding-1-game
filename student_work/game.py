@@ -8,10 +8,10 @@ board = {
     'width': 21,
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
-    'ne': {'x':0, 'y':0}
-    'nw': {'x':0, 'y':0}
-    'se': {'x':0, 'y':0}
-    'nw': {'x':0, 'y':0}
+    'ne': {'x':0, 'y':0},
+    'nw': {'x':0, 'y':0},
+    'se': {'x':0, 'y':0},
+    'nw': {'x':0, 'y':0},
     'player_1': {'x': 0, 'y': 0,  "score": 0},
     'player_2': {'x': 15, 'y': 0,  "score": 0},
     'object': {'x': 8, 'y': 6},
@@ -202,8 +202,8 @@ def move_ball():
     #     new_x, new_y = random.choice(valid_moves)
     #     board['object']["x"] = new_x
     #     board['object']["y"] = new_y
-
-    if board['object']
+    random.shuffle(board['ne'])
+    # if board['object']['x']['y']
 
 
 # runs like all the functions
