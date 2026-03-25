@@ -8,13 +8,10 @@ board = {
     'width': 21,
     'height': 13, 
     #'bot': {'x': 0, 'y': 0,  "score": 0},
-    'ne': {'x':0, 'y':0},
-    'nw': {'x':0, 'y':0},
-    'se': {'x':0, 'y':0},
-    'nw': {'x':0, 'y':0},
+    
     'player_1': {'x': 0, 'y': 0,  "score": 0},
-    'player_2': {'x': 15, 'y': 0,  "score": 0},
-    'object': {'x': 8, 'y': 6},
+     'player_2': {'x': 16, 'y': 0,  "score": 0},
+    'object': {'x': 0, 'y': 9},
     'split1': {'x': 8, 'y': 0},
     'split2': {'x': 8, 'y': 1},
     'split3': {'x': 8, 'y': 2},
@@ -134,21 +131,21 @@ def move_player_1(key):
     board['player_1']['score'] += 1
 
 # Bot is currently random, plz sync up to player/ball movement
-# def move_object():
-#     directions = [(0, -1), (0, 1)]
-#     random.shuffle(directions)
-#     #ex, ey = board['bot']['x'], board['bot']['y']
-#     ey = board['object']['y']
+def move_object():
+    directions = [(0, -1), (0, 1)]
+    random.shuffle(directions)
+    #ex, ey = board['bot']['x'], board['bot']['y']
+    ey = board['object']['y']
 
-#     for dx, dy in directions:
-#         #new_x = ex + dx
-#         new_y = ey + dy
-#         if 0 <= new_y < board['height']:
-#                  board['object']['y'] = new_y
-#                  break
-#     #board['bot']['x'] = new_x
-#     board['object']['y'] = new_y
-#     board['object']['score'] += 1
+    for dx, dy in directions:
+        #new_x = ex + dx
+        new_y = ey + dy
+        if 0 <= new_y < board['height']:
+                 board['object']['y'] = new_y
+                 break
+    #board['bot']['x'] = new_x
+    board['object']['y'] = new_y
+    board['object']['score'] += 1
 
 def move_player_2(key):
     x = board['player_2']['x']
@@ -166,44 +163,51 @@ def move_player_2(key):
     board['player_2']['score'] += 1
 
 def move_ball():
-    # #stdscr.move(y,x)
-    # directions = [
-    #     (0, -1),  # up
-    #     (0, 1),   # down
-    #     (-1, 0),  # left
-    #     (1, 0)    # right
-    # ]
+    #stdscr.move(y,x)
+    directions = [
+        (0, -1),  # up
+        (0, 1),   # down
+        (-1, 0),  # left
+        (1, 0)    # right
+    ]
 
-    # random.shuffle(directions)
+    random.shuffle(directions)
 
-    # ex = board['object']["x"]
-    # ey = board['object']["y"]
+    ex = board['object']["x"]
+    ey = board['object']["y"]
 
-    # valid_moves = []
+    valid_moves = []
 
-    # for dx, dy in directions:
-    #     new_x = ex + dx
-    #     new_y = ey + dy
+    for dx, dy in directions:
+        new_x = ex + dx
+        new_y = ey + dy
 
-    #     # Inside board?
-    #     if not (0 <= new_x < board['width'] and
-    #             0 <= new_y < board['height']):
-    #         continue
+        # Inside board?
+        if not (0 <= new_x < board['width'] and
+                0 <= new_y < board['height']):
+            continue
 
-    #     #Rock collision?
-    #            # if any(o["x"] == new_x and o["y"] == new_y
-    #             #    for o in game_data['obstacles']):
-    #              #   continue
+        #Rock collision?
+               # if any(o["x"] == new_x and o["y"] == new_y
+                #    for o in game_data['obstacles']):
+                 #   continue
 
-    #     valid_moves.append((new_x, new_y))
+        valid_moves.append((new_x, new_y))
 
     # If there are valid moves, pick one
+<<<<<<< HEAD
     # if valid_moves:
     #     new_x, new_y = random.choice(valid_moves)
     #     board['object']["x"] = new_x
     #     board['object']["y"] = new_y
     #random.shuffle(board['ne'])
     # if board['object']['x']['y']
+=======
+    if valid_moves:
+        new_x, new_y = random.choice(valid_moves)
+        board['object']["x"] = new_x
+        board['object']["y"] = new_y
+>>>>>>> 722eadd (....)
 
     ex = board['object']["x"]
     ey = board['object']["y"]
